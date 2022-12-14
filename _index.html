@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta content="width=device-width, initial-scale=1" name="viewport" />
+	</head>
+	<body>
+		<div style="display:table; margin:16px auto;">
+			<div style="max-width:80ch;">
+				<pre>
+<h1>bramvanderkuip.nl</h1>........................................................<span><a href="#Contact">Contact</a></span>
+
++------------------------------------------------------------------------------+
+|                                                                              |
+|                                                                              |
+|                                                                              |
+|                                                                              |
+|                                                                              |
+|                                                                              |
+|                                                                              |
+|                                                                              |
+|                                                                              |
+|                                                                              |
+|                                                                              |
+|                   \||/                                                       |
+|                |  @___oo                                                     |
+|      /\  /\   / (__,,,,|                                                     |
+|     ) /^\) ^\/ _)                                                            |
+|     )   /^\/   _)                                                            |
+|     )   _ /  / _)                                                            |
+| /\  )/\/ ||  | )_)                                                           |
+|<  >      |(,,) )__)                                                          |
+| ||      /    \)___)\                                                         |
+| | \____(      )___) )___                                                     |
+|  \______(_______;;; __;;;                                                    |
++------------------------------------------------------------------------------+
+
+Index
+________________________________________________________________________________
+
+<span id="nav"></span>
+
+///posts///
+
+				<span id="Contact">
+Contact 
+________________________________________________________________________________
+
+email: <a href="mailto:vdkuipb@gmail.com" target="_blank">vdkuipb@gmail.com</a>
+linkedin: <a href="https://www.linkedin.com/in/bram-van-der-kuip" target="_blank">www.linkedin.com/in/bram-van-der-kuip</a>
+github: <a href="https://github.com/vdkuipb" target="_blank">https://github.com/vdkuipb</a>
+
+
+
+________________________________________________________________________________
+
+This site is inspired by: <a href="https://kisslinux.org/" target="_blank">https://kisslinux.org/</a>
+				</span>
+				</pre>
+			</div>
+		</div>
+	</body>
+</html>
+<script>
+	const pages = document.getElementsByClassName("page");
+	const nav = document.getElementById("nav");
+
+	Array.from(pages).forEach(page => {
+		let navItem = "<span>* <a href='#"+ page.id +"'>"+ page.id +"</a>//["+ page.dataset.date +"]</span>";
+		navItem = navItem.replace("//", '.'.repeat(103 - (navItem.length - page.dataset.date.length - page.id.length)))
+		nav.innerHTML += navItem + "\n";
+
+		let readMore = document.getElementById("read_more_" + page.id);
+		readMore.onclick = () => {
+			console.log(page.style)
+			if (page.style.maxHeight == "100%") {
+				page.style.maxHeight = "12.5rem";
+				readMore.innerHTML = "[more...]"
+			} else {
+				page.style.maxHeight = "100%";
+				readMore.innerHTML = "[less...]"
+			}
+		}
+	});
+</script>
+<style>
+	html {
+		color-scheme: dark light;
+	}
+	
+	body {
+		font: 1rem monospace,monospace;
+	}
+
+	h1, h2, h3 {
+		margin: 0;
+		font-weight: normal;
+		display: inline;
+		font-size: inherit;
+	}
+
+	.page {
+		max-height: 12rem;
+		overflow: hidden;
+	}
+</style>
